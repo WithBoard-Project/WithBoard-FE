@@ -12,7 +12,8 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.15",
-    "next": "14.2.0",
+    "axios": "^1.6.8",
+    "next": "^14.2.1-canary.2",
     "react": "^18",
     "react-dom": "^18",
     "react-kakao-maps-sdk": "^1.1.26"
