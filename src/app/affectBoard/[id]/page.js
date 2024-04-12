@@ -9,7 +9,6 @@ import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TablePagination from '@mui/material/TablePagination'
 import TableRow from '@mui/material/TableRow'
-import Button from '@mui/material/Button'
 
 function createData(name, code, population, size) {
   const density = population / size
@@ -36,7 +35,7 @@ const columns = [
   },
 ]
 
-const BoardList = () => {
+export default function BoardList() {
   const [page, setPage] = useState(0)
   const [rowsPerPage, setRowsPerPage] = useState(10)
 
@@ -103,18 +102,21 @@ const BoardList = () => {
       </Paper>
 
       <div>
-        <div className='form-group'>
-          <label className='flex'>리뷰 작성하기</label>
-          <textarea
-            className='ml-8 mt-8 h-[200px] w-[650px] rounded-lg border border-slate-400 px-2 text-xl'
-            name='text'
-            placeholder='리뷰 작성'
-          />
-        </div>
-        <button className='ml-8 mt-10 w-[650px]'> 저장 </button>
+        <form>
+          <div className='form-group'>
+            <label className='flex'>리뷰 작성하기</label>
+            <textarea
+              className='ml-8 mt-8 h-[200px] w-[650px] rounded-lg border border-slate-400 px-2 text-xl'
+              name='text'
+              placeholder='리뷰 작성'
+            />
+          </div>
+
+          <button className='ml-8 mt-10 w-[650px]'> 저장 </button>
+        </form>
 
         <button type='button' className='ml-8 mt-10 w-[650px]'>
-          창 닫기
+          삭제
         </button>
       </div>
 
@@ -148,4 +150,3 @@ const BoardList = () => {
     </div>
   )
 }
-export default BoardList
