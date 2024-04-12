@@ -1,14 +1,17 @@
 'use client'
 
-import Script from 'next/script'
 import { useEffect, useState } from 'react'
 import { Map, MapMarker } from 'react-kakao-maps-sdk'
 
-const KAKAO_API_KEY = process.env.NEXT_PUBLIC_KAKAO_APP_JS_KEY
-const KAKAO_SDK_URL = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_API_KEY}&autoload=false`
-//https://react-kakao-maps-sdk.jaeseokim.dev/docs/intro
+export default function KakaoMap({ homeData }) {
+  const positions = homeData.map((index) => ({
+    title: index.id, // 혹은 적절한 제목 속성
+    latlng: {
+      lat: index.latitude,
+      lng: index.longitude,
+    },
+  }))
 
-export default function KakaoMap() {
   const [state, setState] = useState({
     center: {
       lat: 33.450701,
@@ -52,16 +55,26 @@ export default function KakaoMap() {
 
   return (
     <>
-      <Script src={KAKAO_SDK_URL} strategy='beforeInteractive' />
-
       <Map
         center={state.center}
-        style={{ width: '90%', height: '50%' }}
+        style={{ width: '90%', height: '100%' }}
         className='mt-10 rounded-3xl'
+        level={8} // 지도의 확대 레벨
       >
-        <MapMarker // 인포윈도우를 생성하고 지도에 표시합니다
-          position={state.center}
-        ></MapMarker>
+        {positions.map((position, index) => (
+          <MapMarker
+            key={index}
+            position={position.latlng} // 마커를 표시할 위치
+            image={{
+              src: 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png', // 마커이미지의 주소입니다
+              size: {
+                width: 24,
+                height: 35,
+              }, // 마커이미지의 크기입니다
+            }}
+            title={position.title} // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+          />
+        ))}
       </Map>
     </>
   )

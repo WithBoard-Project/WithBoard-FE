@@ -1,3 +1,7 @@
 export default function SkateboardSwaggerId() {
-  return <div>SkateboardSwaggerId</div>
+  return (
+    <div>
+      <div>ddkdkdkdk</div>
+    </div>
+  )
 }
