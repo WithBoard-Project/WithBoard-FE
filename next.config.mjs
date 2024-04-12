@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // webpack5: true,
   webpack: (config) => {
+    // config.cache = false
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
@@ -12,12 +14,14 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'a0.muscache.com',
+        hostname: 'lh3.googleusercontent.com',
         pathname: '**',
       },
+    ],
+    remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'www.ghibli.jp',
+        hostname: 'img.danawa.com',
         pathname: '**',
       },
     ],
