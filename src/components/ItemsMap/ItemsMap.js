@@ -1,7 +1,7 @@
 import ItemCardView from '@/components/ItemsMap/ItemCardView'
 
 export default async function ItemsMap() {
-  const result = await fetch(`http://localhost:8080/api/home/hotspot`)
+  const result = await fetch(`http://43.200.173.121/api/home/hotspot`)
   const inner = await result.json()
   const hotspot = inner.result
 

@@ -3,7 +3,7 @@ import Navibar from '@/components/Navibar'
 import ItemsMap from '@/components/ItemsMap/ItemsMap'
 
 export default async function HomePage() {
-  const result = await fetch(`http://localhost:8080/api/home/`)
+  const result = await fetch(`http://43.200.173.121/api/home/`)
   const inner = await result.json()
   const homeData = inner.result
 

@@ -1,6 +1,6 @@
 export async function DELETE(request, { params }) {
   const id = params.id
-  const result = await fetch(`http://localhost:8080/api/home/affectionPost/${id}`, {
+  const result = await fetch(`http://43.200.173.121/api/home/affectionPost/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ export async function PUT(request, { params }) {
   const formData = await request.formData()
   const body = Object.fromEntries(formData)
   const id = params.id
-  const result = await fetch(`http://localhost:8080/api/home/affectionPost/${id}`, {
+  const result = await fetch(`http://43.200.173.121/api/home/affectionPost/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
