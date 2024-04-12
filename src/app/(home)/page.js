@@ -1,13 +1,20 @@
-import KakaoMap from '../components/KakaoMap'
+import KakaoMap from '@/components/KakaoMap'
+import Navibar from '@/components/Navibar'
+import ItemsMap from '@/components/ItemsMap/ItemsMap'
 
-export default function HomePage() {
+export default async function HomePage() {
+  const result = await fetch(`http://localhost:8080/api/home/`)
+  const inner = await result.json()
+  const homeData = inner.result
+
   return (
-    <div>
-      <div className='flex '>
-        <div>Kakao map</div>
-        <main className='absolute left-0 top-20 h-screen w-screen'>
-          <KakaoMap />
-        </main>
+    <div className='w-ful flex h-full flex-col items-center justify-center p-5'>
+      <Navibar />
+      <div className='flex h-[450px] h-screen w-[80%] w-screen justify-center'>
+        <KakaoMap homeData={homeData} />
+      </div>
+      <div className='mt-20 flex w-full justify-center'>
+        <ItemsMap />
       </div>
     </div>
   )
