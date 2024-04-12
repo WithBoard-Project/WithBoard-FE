@@ -10,7 +10,7 @@ export default async function HomePage() {
   return (
     <div className='w-ful flex h-full flex-col items-center justify-center p-5'>
       <Navibar />
-      <div className='flex h-[450px] h-screen w-[85%] w-screen justify-center'>
+      <div className='flex h-[450px] h-screen w-[80%] w-screen justify-center'>
         <KakaoMap homeData={homeData} />
       </div>
       <div className='mt-20 flex w-full justify-center'>

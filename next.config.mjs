@@ -18,6 +18,13 @@ const nextConfig = {
         pathname: '**',
       },
     ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.danawa.com',
+        pathname: '**',
+      },
+    ],
   },
 }
 

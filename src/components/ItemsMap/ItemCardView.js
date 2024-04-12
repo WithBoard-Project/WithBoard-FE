@@ -7,7 +7,7 @@ export default function ItemCardView({ key, spotImageUrls, id, address, parkName
       <Link href={`/skateboardSwagger/${id}`}>
         <div className='h-[266.56px] w-full rounded-lg bg-black'>
           <img
-            key={key}
+            key={id}
             src={spotImageUrls}
             alt=''
             className='aspect-custom h-auto w-full rounded-lg object-cover'
