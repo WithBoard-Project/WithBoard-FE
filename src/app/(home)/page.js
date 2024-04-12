@@ -1,13 +1,12 @@
-import KakaoMap from '../components/KakaoMap'
+import KakaoMap from '@/components/KakaoMap'
+import Navibar from '@/components/Navibar'
 
 export default function HomePage() {
   return (
-    <div>
-      <div className='flex '>
-        <div>Kakao map</div>
-        <main className='absolute left-0 top-20 h-screen w-screen'>
-          <KakaoMap />
-        </main>
+    <div className='w-ful flex h-full flex-col items-center justify-center p-8'>
+      <Navibar />
+      <div className='flex h-screen w-screen justify-center'>
+        <KakaoMap />
       </div>
     </div>
   )
