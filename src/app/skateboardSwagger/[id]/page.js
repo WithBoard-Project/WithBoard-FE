@@ -2,7 +2,9 @@ import Navibar from '@/components/Navibar'
 import NoticeBoard from '@/components/noticeBoardComponents/NoticeBoard'
 
 export default async function SkateboardSwaggerId() {
-  const result = await fetch('http://localhost:8080/api/home/affectionPost', { cache: 'no-store' })
+  const result = await fetch('http://43.200.173.121:8080/api/home/affectionPost', {
+    cache: 'no-store',
+  })
   const inner = await result.json()
   const affectionData = inner.result
 
